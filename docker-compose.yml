@@ -1,4 +1,4 @@
-nginx:
+web:
     image: nginx:latest
     ports:
         - "8080:80"
@@ -8,8 +8,8 @@ nginx:
         - ./config/nginx/default.conf:/etc/nginx/conf.d/default.conf
         - ./logs/nginx:/var/log/nginx
     links:
-        - php-fpm
-php-fpm:
+        - php
+php:
     image: php:7-fpm
     ports:
         - "9080:9000"
